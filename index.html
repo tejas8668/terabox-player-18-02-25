@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -114,24 +115,26 @@
                 const fastDownload = document.getElementById('fastDownload');
                 const hdDownload = document.getElementById('hdDownload');
 
-                let response = await fetch("https://yt.savetube.me/api/v1/terabox-downloader", {
-                    "headers": {
-                        "accept": "application/json, text/plain, */*",
-                        "accept-language": "en-US,en;q=0.9",
-                        "content-type": "application/json",
-                        "priority": "u=1, i",
-                        "sec-ch-ua": "\"Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"133\", \"Chromium\";v=\"133\"",
-                        "sec-ch-ua-mobile": "?0",
-                        "sec-ch-ua-platform": "\"Windows\"",
-                        "sec-fetch-dest": "empty",
-                        "sec-fetch-mode": "cors",
-                        "sec-fetch-site": "same-origin"
-                    },
-                    "referrerPolicy": "no-referrer",
-                    "body": "{\"url\":\"https://1024terabox.com/s/1lzlhyNBKDycGolVFKdPMjg\"}",
-                    "method": "POST",
-                    "mode": "cors",
-                    "credentials": "include"
+                const fetchUrl = "https://ytshorts.savetube.me/api/v1/terabox-downloader"; 
+                
+                const response await fetch(fetchUrl, { 
+                    headers: { 
+                        "accept": "application/json, text/plain, */*", 
+                        "accept-language": "en-US,en;q=0.9,hi;q=0.8", 
+                        "content-type": "application/json", 
+                        "priority": "u=1, i", 
+                        "sec-ch-ua": "\"Not/A)Brand\";v=\"8\", \"Chromium\";v=\"126\", \"Google Chrome\"; v=\"126\"", 
+                        "sec-ch-ua-mobile": "70", 
+                        "sec-ch-ua-platform": "\"macOS\"", 
+                        "sec-fetch-dest": "empty", 
+                        "sec-fetch-mode": "cors", 
+                        "sec-fetch-site": "same-origin" 
+                    }, 
+                    referrerPolicy: "no-referrer", 
+                    body: JSON.stringify({ url: urlInput }), 
+                    method: "POST", 
+                    mode: "cors", 
+                    credentials: "include" 
                 });
 
                 response = await response.json();
